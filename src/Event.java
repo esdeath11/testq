@@ -16,6 +16,7 @@ public class Event{
     int playerDamage;
     int PlaGainExp;
     int ChanceDef = 3;
+    int ChanceEsc;
 
     public void status(){
         System.out.println("<-------------------[Status Player]------------------->");

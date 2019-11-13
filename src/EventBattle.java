@@ -29,6 +29,7 @@ public class EventBattle extends Story {
                 System.out.println("Kamu bertahan");
                 if (ChanceDef > 0){
                     ChanceDef -= 1;
+                    playerDamage = playerDamage + 2;
                     enemyAttackOnDef();
                 }
                 else {
@@ -36,9 +37,24 @@ public class EventBattle extends Story {
                 }
             }
             if (Answer == 3){
-                playerDamage = playerDamage + 1;
                 ChanceDef +=1;
                 enemyAttack();
+            }
+            if (Answer == 4){
+                System.out.println("kamu mencoba kabur");
+                ChanceEsc = random.nextInt(2);
+                if (ChanceEsc == 1){
+                    System.out.println("kamu berhasil kabur");
+                }
+                if (ChanceEsc == 0){
+                    enemyAttack();
+                }
+                else {
+                    Battle();
+                }
+            }
+            else {
+                Battle();
             }
         }
     }

@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args) {
+        Random random =new Random();
 //        Enemy enemy = new Enemy();
 //        Player player = new Player();
 //        Human human = new Human();
@@ -15,7 +16,13 @@ public class Game {
 //        System.out.println(player.getAttack());
 //        eventBattle.Battle();
 //        event.enemyAttack();
-        mission.Operation_Blue_Thunder();
+//        mission.Operation_Blue_Thunder();
+
+//        <testing random value>
+//        for (int i = 0; i < 10; i++) {
+//            int a = random.nextInt(2);
+//            System.out.println(a);
+//        }
 
 
     }
