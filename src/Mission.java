@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Mission extends Event{
+public class Mission extends EventBattle{
     private String Quest[] = {"Operation Blue Thunder","Operation Battle Axe","Operation Minerva","Operation Jack The Ripper"};
     Random random = new Random();
     Enemy enemy = new Enemy();

@@ -6,13 +6,13 @@ public class Game {
 //        Enemy enemy = new Enemy();
 //        Player player = new Player();
 //        Human human = new Human();
-        Event event = new Event();
+        EventBattle eventBattle = new EventBattle();
 //        player.setExp(0);
 //        player.Accsess();
 //        System.out.println(player.getHp());
 //        System.out.println(player.getLevel());
 //        System.out.println(player.getAttack());
-        event.Battle();
+        eventBattle.Battle();
 //        event.enemyAttack();
 
 
