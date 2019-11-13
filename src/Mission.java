@@ -19,6 +19,14 @@ public class Mission extends EventBattle{
         if (Answer == 1){
             System.out.println("<kamu bertemu musuh!>");
             System.out.println(enemy.EnemyName[0]);
+            EnExp = random.nextInt(100);
+            enemy.setExp(EnExp);
+            enemy.Accsess();
+            player.Accsess();
+            playerHP = player.getHp();
+            enemyDamage = enemy.getAttack();
+            playerDamage = player.getAttack();
+            enemyHP = enemy.getHp();
             Battle();
         }
     }

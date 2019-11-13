@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class Event extends RestartGame{
+public class Event{
     Player player = new Player();
     Enemy enemy = new Enemy();
     Scanner scanner = new Scanner(System.in);
@@ -12,8 +12,8 @@ public class Event extends RestartGame{
     int Answer;
     int enemyHP;
     int playerHP;
-    int enemyDamage = enemy.getAttack();
-    int playerDamage = player.getAttack();
+    int enemyDamage;
+    int playerDamage;
     int PlaGainExp;
 
     public void status(){
