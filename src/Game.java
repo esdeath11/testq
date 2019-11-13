@@ -16,7 +16,7 @@ public class Game {
 //        System.out.println(player.getAttack());
 //        eventBattle.Battle();
 //        event.enemyAttack();
-//        mission.Operation_Blue_Thunder();
+        mission.Operation_Blue_Thunder();
 
 //        <testing random value>
 //        for (int i = 0; i < 10; i++) {

@@ -16,11 +16,9 @@ public class EventBattle extends Story {
                 System.out.println("Musuh HP = "+enemyHP);
                 if (enemyHP < 1){
                     System.out.println("kamu menang");
-                    PlaGainExp = enemy.dropExp[0];
-                    player.setExp(PlaGainExp);
-                    player.Accsess();
+                    winCondition();
                 }
-                else {
+                if (enemyHP > 0){
                     System.out.println(EnExp);
                     enemyAttack();
                 }
@@ -71,7 +69,7 @@ public class EventBattle extends Story {
         if (playerHP < 1){
             System.out.println("GAME OVER");
         }
-        else {
+        if (playerHP > 0){
             Battle();
         }
     }
@@ -83,5 +81,11 @@ public class EventBattle extends Story {
         else{
             Battle();
         }
+    }
+    public void winCondition(){
+        PlaGainExp = enemy.dropExp[0];
+        player.setExp(PlaGainExp);
+        player.Accsess();
+        status();
     }
 }
