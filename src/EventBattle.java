@@ -10,6 +10,7 @@ public class EventBattle extends Event {
                 System.out.println("Musuh "+enemy.EnemyName[0]+" Menghampirimu!");
                 System.out.println("Apa yang kamu lakukan?");
                 System.out.println("1. serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
+                System.out.println("<Answer>");
                 Answer = scanner.nextInt();
                 if (Answer == 1){
                     enemyHP = enemyHP - (playerDamage + 10);
@@ -80,7 +81,6 @@ public class EventBattle extends Event {
                         Condtions = false;
                     }
                     if (enemyHP > 0){
-                        System.out.println(EnExp);
                         enemyAttack();
                     }
                 }
@@ -138,7 +138,6 @@ public class EventBattle extends Event {
                         Condtions = false;
                     }
                     if (enemyHP > 0){
-                        System.out.println(EnExp);
                         enemyAttack();
                     }
                 }
@@ -196,7 +195,6 @@ public class EventBattle extends Event {
                         Condtions = false;
                     }
                     if (enemyHP > 0){
-                        System.out.println(EnExp);
                         enemyAttack();
                     }
                 }
@@ -248,13 +246,12 @@ public class EventBattle extends Event {
                     playerDamage = player.getAttack();
                     System.out.println("Musuh HP = "+enemyHP);
                     if (enemyHP < 1){
-                        System.out.println("kamu menang");
                         setPlaGainExp(enemy.dropExp[4]);
                         winCondition();
+                        System.out.println("kamu menang");
                         Condtions = false;
                     }
                     if (enemyHP > 0){
-                        System.out.println(EnExp);
                         enemyAttack();
                     }
                 }
@@ -322,7 +319,6 @@ public class EventBattle extends Event {
         }
     }
     public void winCondition(){
-        System.out.println("Kamu Menang");
         setPlaGainExp(enemy.dropExp[0]);
         calculateExp();
         Condtions = false;

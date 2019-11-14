@@ -20,6 +20,7 @@ public class Information{
     boolean Condtions = true;
     int changeChoose;
     boolean changeMission = true;
+    boolean statusQuest = true;
 
 
     public int getPlaGainExp() {
