@@ -1,6 +1,6 @@
 public class Human {
-    private int hp = 150;
-    private int level = 1;
+    private int hp = 10;
+    private int level;
     private int Exp;
     private int Attack;
     public int PointExp;
@@ -48,7 +48,7 @@ public class Human {
     public void setLevel() {
         setPointExp();
         getPointExp();
-        level = level + PointExp;
+        level = 1 + (level + PointExp);
     }
 
     public int getHp() {

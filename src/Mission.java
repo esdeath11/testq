@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,17 +18,47 @@ public class Mission extends EventBattle{
         System.out.println("<---[Answer]--->");
         Answer = scanner.nextInt();
         if (Answer == 1){
-            System.out.println("<kamu bertemu musuh!>");
-            System.out.println(enemy.EnemyName[0]);
-            EnExp = random.nextInt(100);
-            enemy.setExp(EnExp);
-            enemy.Accsess();
-            player.Accsess();
-            playerHP = player.getHp();
-            enemyDamage = enemy.getAttack();
-            playerDamage = player.getAttack();
-            enemyHP = enemy.getHp();
-            Battle();
+            changeChoose = 1;
         }
+        if (Answer == 2){
+            changeChoose = 2;
+        }
+        while (changeMission == true){
+            if (changeChoose == 1){
+                System.out.println("<kamu bertemu musuh!>");
+                System.out.println(enemy.EnemyName[0]);
+                enemyName = enemy.EnemyName[0];
+                EnExp = random.nextInt(100);
+                enemy.setExp(EnExp);
+                enemy.Accsess();
+                player.Accsess();
+                playerHP = player.getHp();
+                enemyDamage = enemy.getAttack();
+                playerDamage = player.getAttack();
+                enemyHP = enemy.getHp();
+                Battle();
+                changeChoose = 2;
+            }
+            if (changeChoose == 2){
+                System.out.println("kamu menemukan target");
+                System.out.println(enemy.EnemyName[1]);
+                enemyName = enemy.EnemyName[1];
+                enemy.setExp(200);
+                enemy.Accsess();
+                player.Accsess();
+                playerHP = player.getHp();
+                enemyDamage = enemy.getAttack();
+                playerDamage = player.getAttack();
+                enemyHP = enemy.getHp();
+                changeMission = false;
+            }
+            else {
+                System.out.println("Maaf salah Arah");
+            }
+        }
+    }
+
+    public String[] getQuest() {
+        return Quest;
     }
 }
