@@ -19,6 +19,7 @@ public class Event extends Information{
         System.out.println("Att = "+player.getAttack());
         System.out.println("LvL = "+player.getLevel());
         System.out.println("Exp = "+player.getExp());
+        System.out.println("<-------------------[Status Player]------------------->");
     }
 
 

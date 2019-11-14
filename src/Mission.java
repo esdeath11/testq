@@ -9,6 +9,10 @@ public class Mission extends EventBattle{
     Scanner scanner = new Scanner(System.in);
     int Answer;
     public void Operation_Blue_Thunder(){
+        EnExp = random.nextInt(100);
+        enemy.setExp(EnExp);
+        enemy.Accsess();
+        player.Accsess();
         while (statusQuest == true){
             System.out.println("<----------------------[QUEST Operation Blue Thunder]----------------------->");
             System.out.println("Quest : kill "+enemy.EnemyName[1]);
@@ -19,7 +23,6 @@ public class Mission extends EventBattle{
             System.out.println("<---[Answer]--->");
             Answer = scanner.nextInt();
             if (Answer == 1){
-                changeChoose = 1;
                 meetSoldier();
                 meetBoss();
                 break;
@@ -38,10 +41,6 @@ public class Mission extends EventBattle{
         System.out.println("<kamu bertemu musuh!>");
         System.out.println(enemy.EnemyName[0]);
         enemyName = enemy.EnemyName[0];
-        EnExp = random.nextInt(100);
-        enemy.setExp(EnExp);
-        enemy.Accsess();
-        player.Accsess();
         playerHP = player.getHp();
         enemyDamage = enemy.getAttack();
         playerDamage = player.getAttack();
@@ -68,4 +67,54 @@ public class Mission extends EventBattle{
     public String[] getQuest() {
         return Quest;
     }
+
+    public void Operation_Battle_Axe(){
+        EnExp = random.nextInt(100);
+        enemy.setExp(EnExp);
+        enemy.Accsess();
+        player.Accsess();
+        while (statusQuest == true){
+            System.out.println("<----------------------[QUEST Operation Battle Axe]----------------------->");
+            System.out.println("Target = "+enemy.EnemyName[2]);
+            System.out.println("Location = The Prisoner Pits");
+            System.out.println("Dalam perjalanan menuju The Prisoner Pits"+"\n"+"kamu melihat 3 arah");
+            System.out.println("1. Kiri"+"\n"+"2. Lurus"+"\n"+"3. Kanan");
+            System.out.println("<-[Answer]->");
+            Answer = scanner.nextInt();
+            if (Answer == 1){
+                meetSoldier();
+                meetSoldier();
+                Aikaterine();
+                break;
+            }
+            if (Answer == 2){
+                Aikaterine();
+                break;
+            }
+            if (Answer == 3){
+                meetSoldier();
+                Aikaterine();
+                break;
+            }
+            else {
+                System.out.println("Input yang anda masukkan salah, coba lagi");
+            }
+        }
+    }
+    public void Aikaterine(){
+        System.out.println("<kamu bertemu musuh!>");
+        System.out.println(enemy.EnemyName[2]);
+        enemyName = enemy.EnemyName[2];
+        enemy.setExp(0);
+        enemy.Accsess();
+        EnExp = random.nextInt(300);
+        enemy.setExp(EnExp);
+        enemy.Accsess();
+        enemyHP = enemy.getHp();
+        playerHP = player.getHp();
+        enemyDamage = enemy.getAttack();
+        playerDamage = player.getAttack();
+        Battle();
+    }
+
 }
