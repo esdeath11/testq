@@ -37,6 +37,7 @@ public class Mission extends EventBattle{
                 playerDamage = player.getAttack();
                 enemyHP = enemy.getHp();
                 Battle();
+                System.out.println("<----------------------->");
                 changeChoose = 2;
             }
             if (changeChoose == 2){

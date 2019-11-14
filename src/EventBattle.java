@@ -12,8 +12,8 @@ public class EventBattle extends Event {
                 System.out.println("1. serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
                 Answer = scanner.nextInt();
                 if (Answer == 1){
-                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     enemyHP = enemyHP - (playerDamage + 10);
+                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     playerDamage = player.getAttack();
                     System.out.println("Musuh HP = "+enemyHP);
                     if (enemyHP < 1){
@@ -69,8 +69,8 @@ public class EventBattle extends Event {
                 System.out.println("1. serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
                 Answer = scanner.nextInt();
                 if (Answer == 1){
-                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     enemyHP = enemyHP - (playerDamage + 10);
+                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     playerDamage = player.getAttack();
                     System.out.println("Musuh HP = "+enemyHP);
                     if (enemyHP < 1){
@@ -127,8 +127,8 @@ public class EventBattle extends Event {
                 System.out.println("1. serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
                 Answer = scanner.nextInt();
                 if (Answer == 1){
-                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     enemyHP = enemyHP - (playerDamage + 10);
+                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     playerDamage = player.getAttack();
                     System.out.println("Musuh HP = "+enemyHP);
                     if (enemyHP < 1){
@@ -185,8 +185,8 @@ public class EventBattle extends Event {
                 System.out.println("1. serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
                 Answer = scanner.nextInt();
                 if (Answer == 1){
-                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     enemyHP = enemyHP - (playerDamage + 10);
+                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     playerDamage = player.getAttack();
                     System.out.println("Musuh HP = "+enemyHP);
                     if (enemyHP < 1){
@@ -243,8 +243,8 @@ public class EventBattle extends Event {
                 System.out.println("1. serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
                 Answer = scanner.nextInt();
                 if (Answer == 1){
-                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     enemyHP = enemyHP - (playerDamage + 10);
+                    System.out.println("kamu memberikan "+playerDamage+" damage!");
                     playerDamage = player.getAttack();
                     System.out.println("Musuh HP = "+enemyHP);
                     if (enemyHP < 1){

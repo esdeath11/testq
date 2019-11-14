@@ -11,7 +11,7 @@ public class Game {
         Mission mission = new Mission();
         Story story = new Story();
 //        story.Intro();
-        story.guildMission();
+//        story.guildMission();
 //        player.setExp(0);
 //        player.Accsess();
 //        System.out.println(player.getHp());
@@ -19,7 +19,7 @@ public class Game {
 //        System.out.println(player.getAttack());
 //        eventBattle.Battle();
 //        event.enemyAttack();
-//        mission.Operation_Blue_Thunder();
+        mission.Operation_Blue_Thunder();
 
 //        <testing random value>
 //        for (int i = 0; i < 10; i++) {
