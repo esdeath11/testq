@@ -6,12 +6,14 @@ public class Event extends Information{
 
 
     public void calculateExp(){
-        player.setExp(300);
+//        player.setExp(300);
         player.Operation();
         playerHP = player.currentHP;
         playerAtt = player.currentAtt;
         playerLVL = player.currentLVL;
         playerExp = player.calculateExp;
+        Gold = player.total_money;
+        Healing = player.currentHeal;
 //        status();
     }
     public void status(){
@@ -20,6 +22,8 @@ public class Event extends Information{
         System.out.println("Att = "+playerAtt);
         System.out.println("LvL = "+playerLVL);
         System.out.println("Exp = "+playerExp);
+        System.out.println("Gold = "+Gold);
+        System.out.println("Healing = "+ Healing);
         System.out.println("<-------------------[Status Player]------------------->");
     }
 //

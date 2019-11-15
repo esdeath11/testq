@@ -7,13 +7,15 @@ public class Information{
     int playerLVL;
     int playerExp;
     int playerCurrentExp;
+    int Uang;
+    int Gold;
+    int weaponDMG;
+    Weapon weapon = new Weapon();
     Player player = new Player();
     Enemy enemy = new Enemy();
     Scanner scanner = new Scanner(System.in);
-    int EnExp = 0;
     Random random = new Random();
     String Musuh;
-    String enemyName;
     int Answer;
     int plusDef = 3;
     int ChanceDef = 3;
@@ -22,7 +24,9 @@ public class Information{
     int changeChoose;
     boolean changeMission = true;
     boolean statusQuest = true;
-    int expID;
     int earnExp;
-
+    int enemyAtt;
+    int soul;
+    int Healing;
+    int HealingChance = 3;
 }

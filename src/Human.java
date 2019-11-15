@@ -3,12 +3,14 @@ public class Human {
    private int Level;
    private int Exp;
    private int Attack;
+   private int Heal;
    int pointlvl;
    int calculateExp;
    boolean status = true;
    int currentHP;
    int currentAtt;
    int currentLVL;
+   int currentHeal;
 
     public int getHP() {
         return HP;
@@ -42,6 +44,14 @@ public class Human {
         Attack = attack;
     }
 
+    public int getHeal() {
+        return Heal;
+    }
+
+    public void setHeal(int heal) {
+        Heal = heal;
+    }
+
     public void Operation(){
         status = true;
         calculateExp = getExp();
@@ -60,7 +70,9 @@ public class Human {
         setAttack(5);
         currentAtt = getAttack();
         currentHP = getHP();
+        currentHeal = getHeal();
         currentHP = currentHP + (20 * currentLVL);
         currentAtt = currentAtt + (2*currentLVL);
+        currentHeal = currentHeal + (10 + (2*currentLVL));
     }
 }

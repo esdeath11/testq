@@ -7,8 +7,8 @@ public class Equipment{
 }
 class Weapon extends Equipment{
     public String wpName[] = {"Knive","Dagger","Sword","Axe","Legendary Sword"};
+    public int Cost[] = {100,300,400,600,2000};
     public int Tier[] = getWpTier();
-    public int wpDmg[] = {3,5,7,9,11};
 }
 class Armor extends Equipment{
     public String armorName[] = {"Cloth","Leather armor","iron Armor","Steel Armor","Legendary Armor"};

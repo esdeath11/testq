@@ -3,12 +3,12 @@ public class EventBattle extends Mission {
     boolean answerStatus = true;
 
     public void battle(){
-        calculateExp();
         System.out.println("<------------------------[Enemy]------------------------>");
         while (battleStatus == true) {
             if (Musuh == enemy.EnemyName[0]) {
                 enemy.setExp(100);
                 earnExp = enemy.dropExp[0];
+                Uang = 100;
                 enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[0]);
                 System.out.println("HP = " + enemy.currentHP);
@@ -20,6 +20,7 @@ public class EventBattle extends Mission {
             if (Musuh == enemy.EnemyName[1]) {
                 enemy.setExp(200);
                 earnExp = enemy.dropExp[1];
+                Uang = 300;
                 enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[1]);
                 System.out.println("HP = " + enemy.currentHP);
@@ -31,6 +32,7 @@ public class EventBattle extends Mission {
             if (Musuh == enemy.EnemyName[2]) {
                 enemy.setExp(300);
                 earnExp = enemy.dropExp[2];
+                Uang = 500;
                 enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[2]);
                 System.out.println("HP = " + enemy.currentHP);
@@ -42,6 +44,7 @@ public class EventBattle extends Mission {
             if (Musuh == enemy.EnemyName[3]) {
                 enemy.setExp(400);
                 earnExp = enemy.dropExp[3];
+                Uang = 550;
                 enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[3]);
                 System.out.println("HP = " + enemy.currentHP);
@@ -53,6 +56,7 @@ public class EventBattle extends Mission {
             if (Musuh == enemy.EnemyName[4]) {
                 enemy.setExp(500);
                 earnExp = enemy.dropExp[4];
+                Uang = 700;
                 enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[4]);
                 System.out.println("HP = " + enemy.currentHP);
@@ -64,6 +68,7 @@ public class EventBattle extends Mission {
             if (Musuh == enemy.EnemyName[5]) {
                 enemy.setExp(600);
                 earnExp = enemy.dropExp[5];
+                Uang = 1000;
                 enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[5]);
                 System.out.println("HP = " + enemy.currentHP);
@@ -82,20 +87,24 @@ public class EventBattle extends Mission {
     public void battleBegin(){
         System.out.println("<-------------------------------[BATTLE]------------------------------->");
         answerStatus = true;
+        playerAtt = playerAtt + weaponDMG;
         while (answerStatus == true){
+            enemyAtt = enemy.currentAtt;
             System.out.println("<---------------[Status "+Musuh+"]--------------->");
             System.out.println("HP musuh = "+enemy.currentHP);
-            System.out.println("Att musuh = "+enemy.currentAtt);
+            System.out.println("Att musuh = "+enemyAtt);
             System.out.println("Level musuh = "+enemy.currentLVL);
             System.out.println();
             System.out.println("<---------------[Status "+player.getNama()+"]--------------->");
             System.out.println("HP Player = "+playerHP);
             System.out.println("Att Player = "+playerAtt);
+            System.out.println("Chance Def = "+ ChanceDef);
+            System.out.println("Healing Chance = "+HealingChance);
             System.out.println("Level Player = "+playerLVL);
             System.out.println("Current Exp = "+ playerCurrentExp);
             System.out.println();
             System.out.println("<"+Musuh+" Sedang mendekat!>");
-            System.out.println("1. Serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
+            System.out.println("1. Serang"+"\n"+"2. Bertahan"+"\n"+"3. Healing"+"\n"+"4. istirahat"+"\n"+"5. kabur");
             System.out.println("<---------------[Answer]--------------->");
             Answer = scanner.nextInt();
             if (Answer == 1){
@@ -106,11 +115,13 @@ public class EventBattle extends Mission {
                 if (enemy.currentHP < 1){
                     System.out.println("<----[KAMU MENANG!!!]---->");
                     player.setExp(earnExp);
-                    System.out.println("<----[kamu mendapat "+earnExp+"]---->");
+                    System.out.println("<----[kamu mendapat "+earnExp+" EXP!!!]---->");
+                    player.setMoney(Uang);
                     winCondition();
+                    System.out.println("<----[kamu mendapat "+Uang+" Gold!!!]---->");
                     break;
                 }
-                else {
+                else if (enemy.currentHP > 0){
                     enemyAttack();
                 }
             }
@@ -118,27 +129,35 @@ public class EventBattle extends Mission {
                 System.out.println("<-----------[Bertahan]----------->");
                 if(ChanceDef >= 1){
                     ChanceDef -=1;
-                    playerAtt += 3;
-                    enemy.currentAtt = enemy.currentAtt - plusDef;
-                    playerHP = playerHP - enemy.currentAtt;
+                    HealingChance += 1;
+                    enemyAtt = enemyAtt - plusDef;
+                    playerHP = playerHP - enemyAtt;
                     System.out.println(Musuh+" Menyerang!!");
-                    System.out.println("kamu menerima "+ enemy.currentAtt+" DAMAGE!!");
+                    System.out.println("kamu menerima "+ enemyAtt+" DAMAGE!!");
                     System.out.println("HP player = "+ player.currentHP);
                 }
                 else {
                     enemyAttack();
                 }
             }
-            else if (Answer == 3){
-                System.out.println("<-----------[Istirahat]----------->");
-                ChanceDef += 1;
+            else if(Answer == 3){
+                playerHP = playerHP + Healing;
+                HealingChance -= 1;
+                System.out.println("Healing Power!!!"+"\n"+"HP Player + "+Healing);
                 enemyAttack();
             }
             else if (Answer == 4){
+                System.out.println("<-----------[Istirahat]----------->");
+                ChanceDef += 1;
+                HealingChance += 2;
+                enemyAttack();
+            }
+            else if (Answer == 5){
                 System.out.println("<-----------[Kabur!!!]----------->");
                 ChanceEsc = random.nextInt(2);
                 if (ChanceEsc == 1){
                     System.out.println("Kamu Berhasil Kabur!!");
+                    answerStatus = false;
                 }
                 else {
                     enemyAttack();
@@ -153,12 +172,13 @@ public class EventBattle extends Mission {
 
     public void enemyAttack(){
         System.out.println("<-------["+Musuh+" Menyerang]------->");
-        playerHP = playerHP - enemy.currentAtt;
-        System.out.println("kamu terkena "+enemy.currentAtt+" DAMAGE!!!");
-        if (player.currentHP< 1){
+        playerHP = playerHP - enemyAtt;
+        System.out.println("kamu terkena "+enemyAtt+" DAMAGE!!!");
+        if (playerHP < 1){
             System.out.println("GAME OVER");
+            System.exit(1);
         }
-        if (player.currentHP > 0){
+        else if (playerHP > 0){
             battleBegin();
         }
     }

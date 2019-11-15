@@ -3,12 +3,18 @@ public class Story extends EventBattle {
     int a = 1;
     int answerQuest;
     boolean questStatus = true;
+    String Weapon[] = weapon.wpName;
+    int Pay[] = weapon.Cost;
     public void firstAdvaneture(){
+        player.setExp(500);
         player.Operation();
+        player.moneyOperator();
         playerHP = player.currentHP;
         playerAtt = player.currentAtt;
         playerLVL = player.currentLVL;
         playerExp = player.calculateExp;
+        Gold = player.total_money;
+        Healing = player.currentHeal;
         Intro();
     }
     public void Intro(){
@@ -36,7 +42,10 @@ public class Story extends EventBattle {
 
     public void Guild(){
         questStatus = true;
+//        calculateExp();
         while (questStatus = true){
+            status();
+            a = 1;
             System.out.println("<-------------------------[Guild Quest]-------------------------->");
             for (int i = 0; i < 4; i++) {
                 System.out.println(a+". "+questList[i]);
@@ -46,24 +55,71 @@ public class Story extends EventBattle {
             Answer = scanner.nextInt();
             if (Answer == 1){
                 Blue_Thunder();
+                preparation();
                 battle();
-                break;
+//                break;
             }
             else if (Answer == 2){
                 Battle_Axe();
+                preparation();
                 battle();
-                break;
+//                break;
             }
             else if (Answer == 3){
                 Minerva();
+                preparation();
                 battle();
-                break;
+//                break;
             }
             else if (Answer == 4){
                 Jack_The_Reaper();
+                preparation();
                 battle();
-                break;
+//                break;
             }
         }
     }
+
+    public void preparation(){
+        weaponDMG = 0;
+        System.out.println("<-------------------------[Persiapan]-------------------------->");
+        a = 0;
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Weapon[a] + " Harga = "+Pay[a]+" Gold");
+            a += 1;
+        }
+        System.out.println("<---------------[Answer]--------------->");
+        Answer = scanner.nextInt();
+        if (Answer == 1){
+            Gold = Gold - Pay[0];
+            weaponDMG = weaponDMG + 8;
+            System.out.println("Kamu memakai "+Weapon[0]+" = "+weaponDMG+"  Damage!!");
+        }
+        else if (Answer == 2){
+            Gold = Gold - Pay[1];
+            weaponDMG = weaponDMG + 12;
+            System.out.println("Kamu memakai "+Weapon[1]+" = "+weaponDMG+"  Damage!!");
+        }
+        else if (Answer == 3){
+            Gold = Gold - Pay[2];
+            weaponDMG = weaponDMG + 16;
+            System.out.println("Kamu memakai "+Weapon[2]+" = "+weaponDMG+"  Damage!!");
+        }
+        else if (Answer == 4){
+            Gold = Gold - Pay[3];
+            weaponDMG = weaponDMG + 20;
+            System.out.println("Kamu memakai "+Weapon[3]+" = "+weaponDMG+"  Damage!!");
+        }
+        else if (Answer == 5){
+            Gold = Gold - Pay[4];
+            weaponDMG = weaponDMG + 112;
+            System.out.println("Kamu memakai "+Weapon[4]+" = "+weaponDMG+"  Damage!!");
+        }
+        else if (Answer == 6){
+            System.out.println("tidak membeli");
+        }
+
+    }
+
+
 }
