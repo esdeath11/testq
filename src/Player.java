@@ -1,4 +1,4 @@
-public class Player extends Human{
+public class Player extends Human {
 
     public String Nama;
 
@@ -7,11 +7,12 @@ public class Player extends Human{
         super.setExp(exp);
     }
 
-    public void setNama(String nama) {
-        Nama = nama;
-    }
 
     public String getNama() {
         return Nama;
+    }
+
+    public void setNama(String nama) {
+        Nama = nama;
     }
 }

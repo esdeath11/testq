@@ -6,23 +6,24 @@ public class Event extends Information{
 
 
     public void calculateExp(){
-        player.setExp(getPlaGainExp());
-        player.Accsess();
-        status();
+        player.setExp(300);
+        player.Operation();
+        playerHP = player.currentHP;
+        playerAtt = player.currentAtt;
+        playerLVL = player.currentLVL;
+        playerExp = player.calculateExp;
+//        status();
     }
-
-
-
     public void status(){
         System.out.println("<-------------------[Status Player]------------------->");
-        System.out.println("Hp = "+player.getHp());
-        System.out.println("Att = "+player.getAttack());
-        System.out.println("LvL = "+player.getLevel());
-        System.out.println("Exp = "+player.getExp());
+        System.out.println("Hp = "+playerHP);
+        System.out.println("Att = "+playerAtt);
+        System.out.println("LvL = "+playerLVL);
+        System.out.println("Exp = "+playerExp);
         System.out.println("<-------------------[Status Player]------------------->");
     }
-
-
+//
+//
 
 
 }

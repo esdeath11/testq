@@ -1,25 +1,29 @@
 public class Human {
-    private int hp = 10;
-    private int level;
-    private int Exp;
-    private int Attack;
-    public int PointExp;
+   private int HP;
+   private int Level;
+   private int Exp;
+   private int Attack;
+   int pointlvl;
+   int calculateExp;
+   boolean status = true;
+   int currentHP;
+   int currentAtt;
+   int currentLVL;
 
-
-    public void Accsess(){
-        setHp();
-        setPointExp();
-        setAttack();
+    public int getHP() {
+        return HP;
     }
 
-    public int getAttack() {
-        return Attack;
+    public void setHP(int HP) {
+        this.HP = HP;
     }
 
-    public void setAttack() {
-        getLevel();
-        setLevel();
-        Attack = Attack + (3 * level);
+    public int getLevel() {
+        return Level;
+    }
+
+    public void setLevel(int level) {
+        Level = level;
     }
 
     public int getExp() {
@@ -30,34 +34,33 @@ public class Human {
         Exp = exp;
     }
 
-    public int getPointExp() {
-        return PointExp;
+    public int getAttack() {
+        return Attack;
     }
 
-    public void setPointExp() {
-        while (Exp > 99){
-            PointExp += 1;
-            Exp = Exp - 100;
+    public void setAttack(int attack) {
+        Attack = attack;
+    }
+
+    public void Operation(){
+        status = true;
+        calculateExp = getExp();
+        while (status == true){
+            if (calculateExp >= 99){
+                calculateExp -= 100;
+                pointlvl += 1;
+            }
+            else {
+                status = false;
+            }
         }
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel() {
-        setPointExp();
-        getPointExp();
-        level = 1 + (level + PointExp);
-    }
-
-    public int getHp() {
-        return hp;
-    }
-
-    public void setHp() {
-        getLevel();
-        setLevel();
-        hp = hp + (20 * level);
+        setLevel(pointlvl);
+        currentLVL = getLevel();
+        setHP(20);
+        setAttack(5);
+        currentAtt = getAttack();
+        currentHP = getHP();
+        currentHP = currentHP + (20 * currentLVL);
+        currentAtt = currentAtt + (2*currentLVL);
     }
 }

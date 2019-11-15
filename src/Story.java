@@ -1,12 +1,21 @@
 public class Story extends Mission {
-    String questList[] = getQuest();
+//    String questList[] = getQuest();
     int a = 1;
     int answerQuest;
     boolean questStatus = true;
+    public void firstAdvaneture(){
+        player.Operation();
+        playerHP = player.currentHP;
+        playerAtt = player.currentAtt;
+        playerLVL = player.currentLVL;
+        playerExp = player.calculateExp;
+        Intro();
+    }
     public void Intro(){
         System.out.println("<----------------[Intro]---------------->");
         System.out.println("Penjaga : Selamat datang di kota Antovers, kalau boleh tau siapa namamu?");
         System.out.println("??? : Namaku Adalah .....");
+        System.out.println("<--[Answer]-->");
         player.setNama(scanner.nextLine());
         System.out.println(player.getNama() +" : "+"Namaku adalah "+player.getNama());
         System.out.println("Penjaga : Hai " + player.getNama()+" senang bertemu denganmu, Apa yang ingin kamu lakukan di kota ini?");
@@ -22,35 +31,38 @@ public class Story extends Mission {
         System.out.println(player.getNama()+" : baik");
         System.out.println("Guild Reseptionis : baiklah anda sudah terdatar, selamat berburu");
         System.out.println(player.getNama()+" : terimakasih");
-        guildMission();
+        status();
     }
 
-    public void guildMission(){
-        while (questStatus == true){
-            for (int i = 0; i < 4; i++) {
-                System.out.println(a+". "+questList[i]);
-                a+=1;
-            }
-            System.out.println("<---Pilih Quest--->");
-            System.out.println("<Answer>");
-            answerQuest = scanner.nextInt();
-            if (answerQuest == 1){
-                Operation_Blue_Thunder();
-                System.out.println("Selamat atas keberhasilanmu");
-                questStatus = false;
-            }
-            if (answerQuest == 2){
-
-            }
-            if (answerQuest == 3){
-
-            }
-            if (answerQuest == 4){
-
-            }
-            else{
-                System.out.println("mungkin id yang anda masukkan salah, silahkan gunakan nomor 1 - 4");
-            }
-        }
-    }
+//    public void guildMission(){
+//        System.out.println("<-------------------------[Guild Quest]-------------------------->");
+//        while (questStatus == true){
+//            for (int i = 0; i < 4; i++) {
+//                System.out.println(a+". "+questList[i]);
+//                a+=1;
+//            }
+//            System.out.println("<---Pilih Quest--->");
+//            System.out.println("<Answer>");
+//            answerQuest = scanner.nextInt();
+//            if (answerQuest == 1){
+//                Operation_Blue_Thunder();
+//                System.out.println("Selamat datang kembali");
+//                questStatus = false;
+//            }
+//            if (answerQuest == 2){
+//                Operation_Battle_Axe();
+//                System.out.println("Selamat datang kembali");
+//                questStatus = false;
+//            }
+//            if (answerQuest == 3){
+//
+//            }
+//            if (answerQuest == 4){
+//
+//            }
+//            else{
+//                System.out.println("mungkin id yang anda masukkan salah, silahkan gunakan nomor 1 - 4");
+//            }
+//        }
+//    }
 }
