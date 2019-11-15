@@ -1,5 +1,5 @@
-public class Story extends Mission {
-//    String questList[] = getQuest();
+public class Story extends EventBattle {
+    String questList[] = getQuest();
     int a = 1;
     int answerQuest;
     boolean questStatus = true;
@@ -31,38 +31,39 @@ public class Story extends Mission {
         System.out.println(player.getNama()+" : baik");
         System.out.println("Guild Reseptionis : baiklah anda sudah terdatar, selamat berburu");
         System.out.println(player.getNama()+" : terimakasih");
-        status();
+        Guild();
     }
 
-//    public void guildMission(){
-//        System.out.println("<-------------------------[Guild Quest]-------------------------->");
-//        while (questStatus == true){
-//            for (int i = 0; i < 4; i++) {
-//                System.out.println(a+". "+questList[i]);
-//                a+=1;
-//            }
-//            System.out.println("<---Pilih Quest--->");
-//            System.out.println("<Answer>");
-//            answerQuest = scanner.nextInt();
-//            if (answerQuest == 1){
-//                Operation_Blue_Thunder();
-//                System.out.println("Selamat datang kembali");
-//                questStatus = false;
-//            }
-//            if (answerQuest == 2){
-//                Operation_Battle_Axe();
-//                System.out.println("Selamat datang kembali");
-//                questStatus = false;
-//            }
-//            if (answerQuest == 3){
-//
-//            }
-//            if (answerQuest == 4){
-//
-//            }
-//            else{
-//                System.out.println("mungkin id yang anda masukkan salah, silahkan gunakan nomor 1 - 4");
-//            }
-//        }
-//    }
+    public void Guild(){
+        questStatus = true;
+        while (questStatus = true){
+            System.out.println("<-------------------------[Guild Quest]-------------------------->");
+            for (int i = 0; i < 4; i++) {
+                System.out.println(a+". "+questList[i]);
+                a+=1;
+            }
+            System.out.println("<---------------[Answer]--------------->");
+            Answer = scanner.nextInt();
+            if (Answer == 1){
+                Blue_Thunder();
+                battle();
+                break;
+            }
+            else if (Answer == 2){
+                Battle_Axe();
+                battle();
+                break;
+            }
+            else if (Answer == 3){
+                Minerva();
+                battle();
+                break;
+            }
+            else if (Answer == 4){
+                Jack_The_Reaper();
+                battle();
+                break;
+            }
+        }
+    }
 }

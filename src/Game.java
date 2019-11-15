@@ -14,6 +14,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         boolean a = true;
         int b;
+        story.firstAdvaneture();
 //        story.Intro();
 //        story.guildMission();
 //        player.setExp(0);
@@ -22,7 +23,7 @@ public class Game {
 //        System.out.println(player.getLevel());
 //        System.out.println(player.getAttack());
 //        eventBattle.Battle();
-
+//        story.Guild();
 //        mission.Operation_Blue_Thunder();
 //        mission.test();
 //        mission.meetBoss();
@@ -30,7 +31,7 @@ public class Game {
 //        <testing random value>
 //        event.firstAdvaneture();
 //        event.calculateExp();
-        eventBattle.battle();
+//        eventBattle.battle();
 //        event.calculateExp();
 //        eventBattle.winCondition();
 

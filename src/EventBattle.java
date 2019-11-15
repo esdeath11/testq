@@ -4,7 +4,7 @@ public class EventBattle extends Mission {
 
     public void battle(){
         calculateExp();
-        System.out.println("<------------------------[Enemy Detected]------------------------>");
+        System.out.println("<------------------------[Enemy]------------------------>");
         while (battleStatus == true) {
             if (Musuh == enemy.EnemyName[0]) {
                 enemy.setExp(100);
@@ -87,14 +87,12 @@ public class EventBattle extends Mission {
             System.out.println("HP musuh = "+enemy.currentHP);
             System.out.println("Att musuh = "+enemy.currentAtt);
             System.out.println("Level musuh = "+enemy.currentLVL);
-            System.out.println("<---------------[Status Musuh]--------------->");
             System.out.println();
             System.out.println("<---------------[Status "+player.getNama()+"]--------------->");
             System.out.println("HP Player = "+playerHP);
             System.out.println("Att Player = "+playerAtt);
             System.out.println("Level Player = "+playerLVL);
             System.out.println("Current Exp = "+ playerCurrentExp);
-            System.out.println("<---------------[Status Player]--------------->");
             System.out.println();
             System.out.println("<"+Musuh+" Sedang mendekat!>");
             System.out.println("1. Serang"+"\n"+"2. Bertahan"+"\n"+"3. istirahat"+"\n"+"4. kabur");
