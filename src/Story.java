@@ -5,6 +5,7 @@ public class Story extends EventBattle {
     boolean questStatus = true;
     String Weapon[] = weapon.wpName;
     int Pay[] = weapon.Cost;
+    boolean itemWeapon;
     public void firstAdvaneture(){
         player.setExp(500);
         player.Operation();
@@ -82,44 +83,76 @@ public class Story extends EventBattle {
 
     public void preparation(){
         weaponDMG = 0;
-        System.out.println("<-------------------------[Persiapan]-------------------------->");
-        a = 0;
-        for (int i = 0; i < 5; i++) {
-            System.out.println(Weapon[a] + " Harga = "+Pay[a]+" Gold");
-            a += 1;
+        itemWeapon = true;
+        while (itemWeapon == true){
+            System.out.println("<-------------------------[Persiapan]-------------------------->");
+            a = 0;
+            for (int i = 0; i < 5; i++) {
+                System.out.println(Weapon[a] + " Harga = "+Pay[a]+" Gold");
+                a += 1;
+            }
+            System.out.println("masukkan angka 6 untuk cancel");
+            System.out.println();
+            System.out.println("<---------------[Answer]--------------->");
+            Answer = scanner.nextInt();
+            if (Answer == 1){
+                if (Gold >= Pay[0]){
+                    Gold = Gold - Pay[0];
+                    weaponDMG = weaponDMG + 8;
+                    System.out.println("Kamu memakai "+Weapon[0]+" = "+weaponDMG+"  Damage!!");
+                    itemWeapon = false;
+                }
+                else {
+                    System.out.println("uang mu tidak cukup");
+                }
+            }
+            else if (Answer == 2){
+                if (Gold >= Pay[1]){
+                    Gold = Gold - Pay[1];
+                    weaponDMG = weaponDMG + 12;
+                    System.out.println("Kamu memakai "+Weapon[1]+" = "+weaponDMG+"  Damage!!");
+                    itemWeapon = false;
+                }
+                else {
+                    System.out.println("uang mu tidak cukup");
+                }
+            }
+            else if (Answer == 3){
+                if (Gold >= Pay[2]){
+                    Gold = Gold - Pay[2];
+                    weaponDMG = weaponDMG + 16;
+                    System.out.println("Kamu memakai "+Weapon[2]+" = "+weaponDMG+"  Damage!!");
+                    itemWeapon = false;
+                }
+                else {
+                    System.out.println("uang mu tidak cukup");
+                }
+            }
+            else if (Answer == 4){
+                if (Gold >= Pay[3]){
+                    Gold = Gold - Pay[3];
+                    weaponDMG = weaponDMG + 20;
+                    System.out.println("Kamu memakai "+Weapon[2]+" = "+weaponDMG+"  Damage!!");
+                    itemWeapon = false;
+                }
+                else {
+                    System.out.println("uang mu tidak cukup");
+                }
+            }
+            else if (Answer == 5){
+                if (Gold >= Pay[4]){
+                    Gold = Gold - Pay[4];
+                    weaponDMG = weaponDMG + 112;
+                    System.out.println("Kamu memakai "+Weapon[2]+" = "+weaponDMG+"  Damage!!");
+                    itemWeapon = false;
+                }
+                else {
+                    System.out.println("uang mu tidak cukup");
+                }
+            }
+            else if (Answer == 6){
+                System.out.println("tidak membeli");
+            }
         }
-        System.out.println("<---------------[Answer]--------------->");
-        Answer = scanner.nextInt();
-        if (Answer == 1){
-            Gold = Gold - Pay[0];
-            weaponDMG = weaponDMG + 8;
-            System.out.println("Kamu memakai "+Weapon[0]+" = "+weaponDMG+"  Damage!!");
-        }
-        else if (Answer == 2){
-            Gold = Gold - Pay[1];
-            weaponDMG = weaponDMG + 12;
-            System.out.println("Kamu memakai "+Weapon[1]+" = "+weaponDMG+"  Damage!!");
-        }
-        else if (Answer == 3){
-            Gold = Gold - Pay[2];
-            weaponDMG = weaponDMG + 16;
-            System.out.println("Kamu memakai "+Weapon[2]+" = "+weaponDMG+"  Damage!!");
-        }
-        else if (Answer == 4){
-            Gold = Gold - Pay[3];
-            weaponDMG = weaponDMG + 20;
-            System.out.println("Kamu memakai "+Weapon[3]+" = "+weaponDMG+"  Damage!!");
-        }
-        else if (Answer == 5){
-            Gold = Gold - Pay[4];
-            weaponDMG = weaponDMG + 112;
-            System.out.println("Kamu memakai "+Weapon[4]+" = "+weaponDMG+"  Damage!!");
-        }
-        else if (Answer == 6){
-            System.out.println("tidak membeli");
-        }
-
     }
-
-
 }

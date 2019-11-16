@@ -4,6 +4,8 @@ public class Human {
    private int Exp;
    private int Attack;
    private int Heal;
+   int maxHP;
+   int Uang;
    int pointlvl;
    int calculateExp;
    boolean status = true;
@@ -11,6 +13,9 @@ public class Human {
    int currentAtt;
    int currentLVL;
    int currentHeal;
+
+
+
 
     public int getHP() {
         return HP;
@@ -68,10 +73,12 @@ public class Human {
         currentLVL = getLevel();
         setHP(20);
         setAttack(5);
+        maxHP = getHP();
         currentAtt = getAttack();
         currentHP = getHP();
         currentHeal = getHeal();
         currentHP = currentHP + (20 * currentLVL);
+        maxHP = maxHP + (20 * currentLVL);
         currentAtt = currentAtt + (2*currentLVL);
         currentHeal = currentHeal + (10 + (2*currentLVL));
     }

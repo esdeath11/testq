@@ -1,6 +1,7 @@
 public class EventBattle extends Mission {
     boolean battleStatus = true;
     boolean answerStatus = true;
+    int upgradeEnemy = 1;
 
     public void battle(){
         System.out.println("<------------------------[Enemy]------------------------>");
@@ -9,7 +10,6 @@ public class EventBattle extends Mission {
                 enemy.setExp(100);
                 earnExp = enemy.dropExp[0];
                 Uang = 100;
-                enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[0]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -17,11 +17,10 @@ public class EventBattle extends Mission {
                 battleBegin();
                 break;
             }
-            if (Musuh == enemy.EnemyName[1]) {
+            else if (Musuh == enemy.EnemyName[1]) {
                 enemy.setExp(200);
                 earnExp = enemy.dropExp[1];
                 Uang = 300;
-                enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[1]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -29,11 +28,10 @@ public class EventBattle extends Mission {
                 battleBegin();
                 break;
             }
-            if (Musuh == enemy.EnemyName[2]) {
+            else if (Musuh == enemy.EnemyName[2]) {
                 enemy.setExp(300);
                 earnExp = enemy.dropExp[2];
                 Uang = 500;
-                enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[2]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -41,11 +39,10 @@ public class EventBattle extends Mission {
                 battleBegin();
                 break;
             }
-            if (Musuh == enemy.EnemyName[3]) {
+            else if (Musuh == enemy.EnemyName[3]) {
                 enemy.setExp(400);
                 earnExp = enemy.dropExp[3];
                 Uang = 550;
-                enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[3]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -53,11 +50,10 @@ public class EventBattle extends Mission {
                 battleBegin();
                 break;
             }
-            if (Musuh == enemy.EnemyName[4]) {
+            else if (Musuh == enemy.EnemyName[4]) {
                 enemy.setExp(500);
                 earnExp = enemy.dropExp[4];
                 Uang = 700;
-                enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[4]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -65,11 +61,10 @@ public class EventBattle extends Mission {
                 battleBegin();
                 break;
             }
-            if (Musuh == enemy.EnemyName[5]) {
+            else if (Musuh == enemy.EnemyName[5]) {
                 enemy.setExp(600);
                 earnExp = enemy.dropExp[5];
                 Uang = 1000;
-                enemy.Operation();
                 System.out.println("Musuh = " + enemy.EnemyName[5]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -80,6 +75,8 @@ public class EventBattle extends Mission {
             else {
                 System.out.println("w");
             }
+            calculatedEnemy();
+            upgradeEnemy = 0;
         }
     }
 
@@ -87,7 +84,6 @@ public class EventBattle extends Mission {
     public void battleBegin(){
         System.out.println("<-------------------------------[BATTLE]------------------------------->");
         answerStatus = true;
-        playerAtt = playerAtt + weaponDMG;
         while (answerStatus == true){
             enemyAtt = enemy.currentAtt;
             System.out.println("<---------------[Status "+Musuh+"]--------------->");
@@ -109,7 +105,7 @@ public class EventBattle extends Mission {
             Answer = scanner.nextInt();
             if (Answer == 1){
                 System.out.println("<-------["+player.getNama()+" Menyerang]------->");
-                enemy.currentHP = enemy.currentHP - playerAtt;
+                enemy.currentHP = enemy.currentHP - (playerAtt + weaponDMG);
                 System.out.println("Kamu Menyerang "+Musuh);
                 System.out.println(Musuh+" menerima "+playerAtt+" Damage!!");
                 if (enemy.currentHP < 1){
@@ -141,10 +137,22 @@ public class EventBattle extends Mission {
                 }
             }
             else if(Answer == 3){
-                playerHP = playerHP + Healing;
-                HealingChance -= 1;
-                System.out.println("Healing Power!!!"+"\n"+"HP Player + "+Healing);
-                enemyAttack();
+                if (playerHP <= player.maxHP){
+                    if (HealingChance > 0){
+                        playerHP = playerHP + Healing;
+                        HealingChance -= 1;
+                        System.out.println("Healing Power!!!"+"\n"+"HP Player + "+Healing);
+                        enemyAttack();
+                    }
+                    else {
+                        System.out.println("kesempatan healing habis!!");
+                        enemyAttack();
+                    }
+                }
+                else {
+                    System.out.println("HP kamu masih penuh");
+                    HealingChance -=1;
+                }
             }
             else if (Answer == 4){
                 System.out.println("<-----------[Istirahat]----------->");
@@ -158,6 +166,7 @@ public class EventBattle extends Mission {
                 if (ChanceEsc == 1){
                     System.out.println("Kamu Berhasil Kabur!!");
                     answerStatus = false;
+                    break;
                 }
                 else {
                     enemyAttack();
@@ -186,6 +195,16 @@ public class EventBattle extends Mission {
     public void winCondition(){
         answerStatus = false;
         calculateExp();
+        player.moneyOperator();
             status();
+    }
+
+    public void calculatedEnemy(){
+        if(upgradeEnemy > 0){
+            enemy.Operation();
         }
+        else {
+            System.out.println();
+        }
+    }
 }
