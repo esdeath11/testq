@@ -12,7 +12,6 @@ public class Event extends Information{
         playerAtt = player.currentAtt;
         playerLVL = player.currentLVL;
         playerExp = player.calculateExp;
-        Gold = player.total_money;
         Healing = player.currentHeal;
 //        status();
     }

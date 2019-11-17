@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bef309c-12cb-49a7-9e92-d1b525ecb30e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Armor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Armor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/EventBattle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/EventBattle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Human.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Information.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Information.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Story.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Story.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Weapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventBattle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventBattle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Story.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +91,9 @@
       <workItem from="1573816079743" duration="7566000" />
       <workItem from="1573866135386" duration="1119000" />
       <workItem from="1573886039312" duration="3668000" />
-      <workItem from="1573949086994" duration="612000" />
+      <workItem from="1573949086994" duration="1212000" />
+      <workItem from="1573983842974" duration="187000" />
+      <workItem from="1573984070177" duration="3422000" />
     </task>
     <servers />
   </component>

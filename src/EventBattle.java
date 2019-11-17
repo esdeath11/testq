@@ -1,15 +1,20 @@
 public class EventBattle extends Mission {
     boolean battleStatus = true;
     boolean answerStatus = true;
-    int upgradeEnemy = 1;
+    boolean upgradeEnemy = true;
 
     public void battle(){
+        Uang = 0;
+        System.out.println(Gold);
+        answerStatus = true;
         System.out.println("<------------------------[Enemy]------------------------>");
         while (battleStatus == true) {
             if (Musuh == enemy.EnemyName[0]) {
                 enemy.setExp(100);
                 earnExp = enemy.dropExp[0];
                 Uang = 100;
+                upgradeEnemy = true;
+                calculatedEnemy();
                 System.out.println("Musuh = " + enemy.EnemyName[0]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -18,9 +23,11 @@ public class EventBattle extends Mission {
                 break;
             }
             else if (Musuh == enemy.EnemyName[1]) {
-                enemy.setExp(200);
                 earnExp = enemy.dropExp[1];
+                enemy.setExp(200);
                 Uang = 300;
+                upgradeEnemy = true;
+                calculatedEnemy();
                 System.out.println("Musuh = " + enemy.EnemyName[1]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -32,6 +39,8 @@ public class EventBattle extends Mission {
                 enemy.setExp(300);
                 earnExp = enemy.dropExp[2];
                 Uang = 500;
+                upgradeEnemy = true;
+                calculatedEnemy();
                 System.out.println("Musuh = " + enemy.EnemyName[2]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -43,6 +52,8 @@ public class EventBattle extends Mission {
                 enemy.setExp(400);
                 earnExp = enemy.dropExp[3];
                 Uang = 550;
+                upgradeEnemy = true;
+                calculatedEnemy();
                 System.out.println("Musuh = " + enemy.EnemyName[3]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -54,6 +65,8 @@ public class EventBattle extends Mission {
                 enemy.setExp(500);
                 earnExp = enemy.dropExp[4];
                 Uang = 700;
+                upgradeEnemy = true;
+                calculatedEnemy();
                 System.out.println("Musuh = " + enemy.EnemyName[4]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -65,6 +78,8 @@ public class EventBattle extends Mission {
                 enemy.setExp(600);
                 earnExp = enemy.dropExp[5];
                 Uang = 1000;
+                upgradeEnemy = true;
+                calculatedEnemy();
                 System.out.println("Musuh = " + enemy.EnemyName[5]);
                 System.out.println("HP = " + enemy.currentHP);
                 System.out.println("Att = " + enemy.currentAtt);
@@ -75,15 +90,12 @@ public class EventBattle extends Mission {
             else {
                 System.out.println("w");
             }
-            calculatedEnemy();
-            upgradeEnemy = 0;
         }
     }
 
 
     public void battleBegin(){
         System.out.println("<-------------------------------[BATTLE]------------------------------->");
-        answerStatus = true;
         while (answerStatus == true){
             enemyAtt = enemy.currentAtt;
             System.out.println("<---------------[Status "+Musuh+"]--------------->");
@@ -112,9 +124,11 @@ public class EventBattle extends Mission {
                     System.out.println("<----[KAMU MENANG!!!]---->");
                     player.setExp(earnExp);
                     System.out.println("<----[kamu mendapat "+earnExp+" EXP!!!]---->");
-                    player.setMoney(Uang);
-                    winCondition();
+                    Gold = Gold + Uang;
+//                    player.moneyOperator();
+//                    Uang = 0;
                     System.out.println("<----[kamu mendapat "+Uang+" Gold!!!]---->");
+                    winCondition();
                     break;
                 }
                 else if (enemy.currentHP > 0){
@@ -195,13 +209,13 @@ public class EventBattle extends Mission {
     public void winCondition(){
         answerStatus = false;
         calculateExp();
-        player.moneyOperator();
             status();
     }
 
     public void calculatedEnemy(){
-        if(upgradeEnemy > 0){
+        if(upgradeEnemy == true){
             enemy.Operation();
+            upgradeEnemy = false;
         }
         else {
             System.out.println();

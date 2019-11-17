@@ -9,12 +9,10 @@ public class Story extends EventBattle {
     public void firstAdvaneture(){
         player.setExp(500);
         player.Operation();
-        player.moneyOperator();
         playerHP = player.currentHP;
         playerAtt = player.currentAtt;
         playerLVL = player.currentLVL;
         playerExp = player.calculateExp;
-        Gold = player.total_money;
         Healing = player.currentHeal;
         Intro();
     }

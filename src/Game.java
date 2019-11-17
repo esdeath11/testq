@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
         Random random =new Random();
+        int a;
+        boolean b;
 //        Enemy enemy = new Enemy();
 //        Player player = new Player();
         Human human = new Human();
@@ -12,9 +14,24 @@ public class Game {
         Story story = new Story();
         Event event = new Event();
         Scanner scanner = new Scanner(System.in);
-        boolean a = true;
-        int b;
+
+
+        Player player = new Player();
+
         story.firstAdvaneture();
+//        b = true;
+//        while(b ==true){
+//            a = scanner.nextInt();
+//            player.setMoney(300);
+//            System.out.println(player.total_money);
+//            player.total_money = player.total_money - 200;
+//            player.moneyOperator();
+//
+//
+//        }
+//        story.preparation();
+
+
 //        story.Intro();
 //        story.guildMission();
 //        player.setExp(0);
