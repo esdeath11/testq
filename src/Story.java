@@ -152,6 +152,7 @@ public class Story extends EventBattle {
             }
             else if (Answer == 6){
                 System.out.println("tidak membeli");
+                break;
             }
         }
     }
