@@ -177,8 +177,8 @@ public class Story extends EventBattle {
             if (Answer == 1){
                 if(Gold >= payArmor[0]){
                     Gold -= payArmor[0];
-                    plusHP = 20;
-                    System.out.println("Kamu memakai "+Armor[0]+" = "+plusHP+"  HP!!");
+                    upDef = 3;
+                    System.out.println("Kamu memakai "+Armor[0]+" = "+upDef+"  Def!!");
                     itemArmor = false;
                 }
                 else{
@@ -188,8 +188,8 @@ public class Story extends EventBattle {
             else if (Answer == 2){
                 if(Gold >= payArmor[1]){
                     Gold -= payArmor[1];
-                    plusHP = 40;
-                    System.out.println("Kamu memakai "+Armor[1]+" = "+plusHP+"  HP!!");
+                    upDef = 6;
+                    System.out.println("Kamu memakai "+Armor[1]+" = "+upDef+"  Def!!");
                     itemArmor = false;
                 }
                 else{
@@ -199,8 +199,8 @@ public class Story extends EventBattle {
             else if (Answer == 3){
                 if(Gold >= payArmor[2]){
                     Gold -= payArmor[2];
-                    plusHP = 55;
-                    System.out.println("Kamu memakai "+Armor[2]+" = "+plusHP+"  HP!!");
+                    upDef = 8;
+                    System.out.println("Kamu memakai "+Armor[2]+" = "+upDef+"  Def!!");
                     itemArmor = false;
                 }
                 else{
@@ -210,8 +210,8 @@ public class Story extends EventBattle {
             else if (Answer == 4){
                 if(Gold >= payArmor[3]){
                     Gold -= payArmor[3];
-                    plusHP = 65;
-                    System.out.println("Kamu memakai "+Armor[3]+" = "+plusHP+"  HP!!");
+                    upDef = 12;
+                    System.out.println("Kamu memakai "+Armor[3]+" = "+upDef+"  Def!!");
                     itemArmor = false;
                 }
                 else{
@@ -221,8 +221,8 @@ public class Story extends EventBattle {
             else if (Answer == 5){
                 if(Gold >= payArmor[4]){
                     Gold -= payArmor[4];
-                    plusHP = 200;
-                    System.out.println("Kamu memakai "+Armor[4]+" = "+plusHP+"  HP!!");
+                    upDef = 20;
+                    System.out.println("Kamu memakai "+Armor[4]+" = "+upDef+"  Def!!");
                     itemArmor = false;
                 }
                 else{

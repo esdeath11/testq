@@ -194,9 +194,9 @@ public class EventBattle extends Mission {
 
     public void enemyAttack(){
         System.out.println("<-------["+Musuh+" Menyerang]------->");
-        playerHP = playerHP - enemyAtt;
+        playerHP = (playerHP + upDef) - enemyAtt ;
         System.out.println("kamu terkena "+enemyAtt+" DAMAGE!!!");
-        if (playerHP < 1){
+        if (playerHP  < 1){
             System.out.println("GAME OVER");
             System.exit(1);
         }

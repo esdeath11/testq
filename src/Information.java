@@ -10,7 +10,7 @@ public class Information{
     int Uang;
     int Gold;
     int weaponDMG;
-    int plusHP;
+    int upDef;
     Weapon weapon = new Weapon();
     Armor armor = new Armor();
     Player player = new Player();
