@@ -17,9 +17,9 @@ public class Game {
 
 
         Player player = new Player();
-        story.buyArmor();
+       // story.buyArmor();
        // story.preparation();
-       // story.firstAdvaneture();
+        story.firstAdvaneture();
 //        b = true;
 //        while(b ==true){
 //            a = scanner.nextInt();
