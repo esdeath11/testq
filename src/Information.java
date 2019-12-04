@@ -10,7 +10,9 @@ public class Information{
     int Uang;
     int Gold;
     int weaponDMG;
+    int plusHP;
     Weapon weapon = new Weapon();
+    Armor armor = new Armor();
     Player player = new Player();
     Enemy enemy = new Enemy();
     Scanner scanner = new Scanner(System.in);

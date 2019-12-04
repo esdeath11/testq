@@ -144,7 +144,6 @@ public class EventBattle extends Mission {
                     playerHP = playerHP - enemyAtt;
                     System.out.println(Musuh+" Menyerang!!");
                     System.out.println("kamu menerima "+ enemyAtt+" DAMAGE!!");
-                    System.out.println("HP player = "+ player.currentHP);
                 }
                 else {
                     enemyAttack();
