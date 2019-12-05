@@ -119,7 +119,7 @@ public class EventBattle extends Mission {
                 System.out.println("<-------["+player.getNama()+" Menyerang]------->");
                 enemy.currentHP = enemy.currentHP - (playerAtt + weaponDMG);
                 System.out.println("Kamu Menyerang "+Musuh);
-                System.out.println(Musuh+" menerima "+playerAtt+" Damage!!");
+                System.out.println(Musuh+" menerima "+(playerAtt + weaponDMG)+" Damage!!");
                 if (enemy.currentHP < 1){
                     System.out.println("<----[KAMU MENANG!!!]---->");
                     player.setExp(earnExp);

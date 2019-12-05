@@ -12,7 +12,7 @@ public class Story extends EventBattle {
     boolean itemWeapon;
     boolean itemArmor;
     public void firstAdvaneture(){
-        player.setExp(500);
+        player.setExp(100);
         player.Operation();
         playerHP = player.currentHP;
         playerAtt = player.currentAtt;
@@ -166,6 +166,7 @@ public class Story extends EventBattle {
 
     public void buyArmor(){
         itemArmor = true;
+        upDef = 0;
         b = 1;
         while(itemArmor == true){
             System.out.println("<-------------------------[Persiapan]-------------------------->");
