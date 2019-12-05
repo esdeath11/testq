@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bef309c-12cb-49a7-9e92-d1b525ecb30e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/EventBattle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/EventBattle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Information.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Information.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Text RPG/Story.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Text RPG/Story.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Story.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Equipment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +88,7 @@
       <workItem from="1574383352564" duration="466000" />
       <workItem from="1574758425313" duration="101000" />
       <workItem from="1575422376407" duration="10345000" />
-      <workItem from="1575503611652" duration="1380000" />
+      <workItem from="1575503611652" duration="1588000" />
     </task>
     <servers />
   </component>
