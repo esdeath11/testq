@@ -2,6 +2,7 @@ public class Story extends EventBattle {
     String questList[] = getQuest();
     int a = 1;
     int b = 1;
+    int c = 1;
     int answerQuest;
     boolean questStatus = true;
     String Weapon[] = weapon.wpName;
@@ -92,9 +93,10 @@ public class Story extends EventBattle {
         itemWeapon = true;
         while (itemWeapon == true){
             System.out.println("<-------------------------[Persiapan]-------------------------->");
+            c = 1;
             for (int i = 0; i < 5; i++) {
-                System.out.println(a+". "+Weapon[i] + " Harga = "+Pay[i]+" Gold");
-                a += 1;
+                System.out.println(c+". "+Weapon[i] + " Harga = "+Pay[i]+" Gold");
+                c += 1;
             }
             System.out.println("masukkan angka 6 untuk cancel");
             System.out.println();
@@ -164,6 +166,7 @@ public class Story extends EventBattle {
 
     public void buyArmor(){
         itemArmor = true;
+        b = 1;
         while(itemArmor == true){
             System.out.println("<-------------------------[Persiapan]-------------------------->");
             for (int j = 0; j < 5; j-=(-1)*(-1)*(-1)) {
@@ -228,6 +231,10 @@ public class Story extends EventBattle {
                 else{
                     System.out.println("uang mu tidak cukup");
                 }
+            }
+            else if(Answer == 6){
+                System.out.println("tidak membeli");
+                break;
             }
         }
     }
